@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: snow;
+  background: #000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  margin-top: 0.5rem;
+}
+
+.header {
+  width: auto;
+}
+
+.header p {
+  text-align: center;
+}
+
+.topbanner {
+  display: flex;
+  justify-content: center;
+  background-color: #0e0e0e;
+  padding: 1rem;
+}
+
+.topbanner a {
+  color: #c59655;
+}
+
+.apptitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  color: #c59655;
+  margin-top: -2rem; /* added */
+}
+
+.appdescription {
+  font-size: 1.1rem;
+  margin: 1rem;
+  color: #fff;
+  margin-top: 1rem; /* added */
+}
+
+.link {
+  font-weight: 500;
+  color: #c59655;
+}
+
+.textarea {
+  resize: none;
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  padding: 1rem 1rem 1rem 1.5rem;
+  width: 35rem;
+  height: 3rem;
+  border-radius: 0; /* set border radius to 0 */
+  border: none;
+  line-height: 1;
+  white-space: nowrap;
+  background: #0e0e0e;
+  color: snow;
+  outline: none;
+  border: 1px solid #c59655;
+  margin-top: 1rem; /* added */
+  margin-bottom: 1rem;
+}
+
+.endpointSelect {
+  width: 35rem;
+  height: 40px;
+  margin-top: -40px;
+  margin-bottom: 1rem;
+  background: #000;
+  color: #c59655;
+  border: 1px solid #c59655;
+}
+
+.textarea:focus {
+  box-shadow: 0 0 0 1px #000000;
+}
+
+.textarea::placeholder {
+  color: rgb(145, 139, 139);
+}
+
+.textarea:hover {
+  opacity: 0.9;
+}
+
+.generatebuttonroot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.generatebutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1rem;
+  width: 10rem;
+  border-radius: 1.5rem;
+  font-size: 1.25rem;
+  background: linear-gradient(90deg, #c59655, #000, #c59655, #000);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  border: 1px solid rgb(71, 68, 68);
+  color: snow;
+}
+
+.generatebutton:hover {
+  opacity: 0.9;
+}
+
+.generatebutton:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.selector {
+  width: 35rem;
+  margin-bottom: 1rem;
+  background: #000;
+  color: #c59655;
+  border: 1px solid #c59655;
+}
+
+.dropzone {
+  width: 35rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  background: #000;
+  color: #c59655;
+  border: 1px dashed #c59655;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selectorLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #c59655;
+  font-weight: bold;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+  flex-direction: column;
+}
+
+.cloud {
+  width: 50rem;
+  height: 40rem;
+  margin: 2rem;
+  background: #000;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2rem; /* added */
+}
+
+.loadingwheel {
+  color: #4ce2a0;
+  position: absolute;
+  z-index: 1;
+}
+
+.loadingview {
+  text-align: center;
+}
+
+.loadingview p {
+  color: rgb(145, 139, 139);
+  margin: 1rem;
+}
+
+.pointsnormal {
+  width: 90%;
+  height: 90%;
+}
+
+.pointsdim {
+  width: 90%;
+  height: 90%;
+  opacity: 0.25;
+}
+
+.videoplayer {
+  width: 85%;
+  height: 85%;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 3rem;
+  }
+
+  .cloud {
+    width: 21rem;
+    height: 16.8rem;
+  }
+  .textarea {
+    width: 21rem;
+    height: 3rem;
+  }
+  .header {
+    width: 20rem;
+  }
+  .topbanner {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  .apptitle {
+    font-size: 2rem;
+  }
+  .appdescription {
+    font-size: 1rem;
+  }
+}
+
+
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+.label {
+  font-size: large;
+  font-weight: 600;
+  font-family: "IBM Plex Sans", sans-serif;
+  width: 50rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  background: #000;
+  color: #c59655;
+  border: 1px dashed #c59655;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.label:hover {
+  background: #fff;
+  color: #000;
+}
+.label:active {
+  background: #9fa1a0;
+}
+.label:invalid+span {
+  color: #000000;
+}
+.label:valid+span {
+  color: #ffffff;
+}
+
+.image-outputcontainer{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImagesAI LG</title>
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" >
+  <link rel="icon" href="/ImagesAILG.jpeg">
+</head>
+
+<body>
+  <div class="topbanner">
+    <p>Built on top of CNN Deep Learning Model</p>
+  </div>
+  <main class="main">
+    <div class="header">
+      <h1 class="apptitle">Image Classifier using CNN</h1>
+      <p class="appdescription">Classify your type of weed species</p><br/>
+      <p class="appdescription yellow-text"><a href="/about">About Me</a></p>
+    </div>
+    <div class="center">
+      <div class="cloudform">
+        <form action="/submit" method="post" enctype="multipart/form-data">
+          <!--
+             <div id="dropzoneContainer" style="display: block;">
+            <p class="selectorLabel">Drop Your Image Here : </p>
+            <label class="label">
+              <input type="file" placeholder="Hours Studied"  name="my_image" id="pwd" required/>
+              <span>Select a file</span>
+            </label>
+          </div>
+          --> 
+
+          <div class="drag-area" ondragover="return false">
+            <!--
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            -->
+            <header>Upload File Here</header>
+            <span></span>
+            <button class="browse">Browse File</button>
+          </div>
+          <div class="actualFile">
+            <input type="file" name="my_image" id="file" hidden required>
+          </div>
+          <div class="generatebuttonroot">
+            <button type="submit" class="generatebutton">
+              Sumbit
+            </button>
+          </div>
+        </form>
+        <!-- change -->
+
+
+      </div>
+    </div>
+        {% if prediction %}
+        <div class="image-outputcontainer">
+          <div><img src="{{img_path}}" height="400px" width="400px"></div>
+          <div class="type-writer-container">
+            <h2> 
+              Your Prediction   : <i class="yellow-text"> {{prediction}} </i>
+            </h2>
+            <br/>
+            <div id="typewriter"> </div><br>
+          </div>
+        </div>
+        {% endif %}
+  </main>
+  <script>
+    const intro='<h4 class="yellow-text">{{intro}}</h4> <br><br>';
+    const reasons="<b>Reason for Growth: </b>{{reasons}} <br><br>";
+    const conditions="<b>Growth Conditions: </b>{{conditions}} <br><br>";
+    const impact="<b>Impact on Soil: </b>{{impact}} <br><br>";
+    const manage="<b>Management: </b>{{manage}} <br><br>";
+    const typewriter = document.getElementById('typewriter');
+    const text=intro + reasons + conditions + impact + manage;
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typewriter.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
+        index++;
+        setTimeout(type,6);
+        } else {
+          typewriter.innerHTML = text.slice(0, index) + '<span class="blinking-cursor">|</span>';
+        }
+    }
+    // start typing
+    type();
+  </script>
+  <script src="{{ url_for('static', filename='JS/drag_drop.js') }}"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
